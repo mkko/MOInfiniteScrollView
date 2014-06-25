@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MOInfiniteScrollView.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<MOInfiniteScrollViewDataSource, UIScrollViewDelegate>
 
 @end

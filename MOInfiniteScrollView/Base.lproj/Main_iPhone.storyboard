@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5023" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--class Prefix:identifier View Controller-->
+        <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
@@ -12,11 +12,91 @@
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                    <view key="view" contentMode="scaleToFill" id="LhM-Cx-HZj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kjn-eM-F49" customClass="MOInfiniteScrollView">
+                                <rect key="frame" x="0.0" y="159" width="320" height="250"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="DLV-Sw-fXp"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="UBe-UZ-2cs"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="BcK-bE-90o"/>
+                                </connections>
+                            </scrollView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="-300" maxValue="300" translatesAutoresizingMaskIntoConstraints="NO" id="G1l-Fe-fEi">
+                                <rect key="frame" x="18" y="425" width="284" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="PgT-Cp-SLx"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="updated:" destination="vXZ-lx-hvc" eventType="valueChanged" id="Ilw-Px-1P2"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LLb-y3-eun">
+                                <rect key="frame" x="0.0" y="117" width="320" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="26" id="R0U-tf-bBN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ugm-je-xXl">
+                                <rect key="frame" x="0.0" y="79" width="160" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="sNn-Ff-K6t"/>
+                                </constraints>
+                                <state key="normal" title="Jump to 0">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="jumpToZero:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ELu-Ov-TKX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dRI-bS-WI2">
+                                <rect key="frame" x="160" y="79" width="160" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="VSn-XN-GXT"/>
+                                </constraints>
+                                <state key="normal" title="Reload">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="reload:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="fkZ-sf-bgF"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dRI-bS-WI2" firstAttribute="width" secondItem="Ugm-je-xXl" secondAttribute="width" id="0LF-VW-El6"/>
+                            <constraint firstAttribute="trailing" secondItem="Kjn-eM-F49" secondAttribute="trailing" id="4Bo-pI-jhw"/>
+                            <constraint firstItem="LLb-y3-eun" firstAttribute="top" secondItem="dRI-bS-WI2" secondAttribute="bottom" constant="8" id="6Ho-8O-CDq"/>
+                            <constraint firstItem="LLb-y3-eun" firstAttribute="top" secondItem="Ugm-je-xXl" secondAttribute="bottom" constant="8" id="AYL-tw-OKv"/>
+                            <constraint firstItem="dRI-bS-WI2" firstAttribute="leading" secondItem="Ugm-je-xXl" secondAttribute="trailing" id="B5J-mb-AOz"/>
+                            <constraint firstAttribute="trailing" secondItem="G1l-Fe-fEi" secondAttribute="trailing" constant="20" id="DFu-IM-UW3"/>
+                            <constraint firstAttribute="centerY" secondItem="Kjn-eM-F49" secondAttribute="centerY" id="QHE-YN-DTX"/>
+                            <constraint firstItem="G1l-Fe-fEi" firstAttribute="top" secondItem="Kjn-eM-F49" secondAttribute="bottom" constant="16" id="Tjq-3S-Udp"/>
+                            <constraint firstItem="Kjn-eM-F49" firstAttribute="leading" secondItem="LhM-Cx-HZj" secondAttribute="leading" id="UY8-fL-YQc"/>
+                            <constraint firstItem="Kjn-eM-F49" firstAttribute="top" secondItem="LLb-y3-eun" secondAttribute="bottom" constant="16" id="aAp-Ng-gjd"/>
+                            <constraint firstAttribute="trailing" secondItem="LLb-y3-eun" secondAttribute="trailing" id="fek-AI-nr8"/>
+                            <constraint firstItem="LLb-y3-eun" firstAttribute="leading" secondItem="LhM-Cx-HZj" secondAttribute="leading" id="ldv-bl-l05"/>
+                            <constraint firstItem="Ugm-je-xXl" firstAttribute="leading" secondItem="LhM-Cx-HZj" secondAttribute="leading" id="nhW-df-G0O"/>
+                            <constraint firstItem="G1l-Fe-fEi" firstAttribute="leading" secondItem="LhM-Cx-HZj" secondAttribute="leading" constant="20" id="x4h-Ok-b29"/>
+                            <constraint firstAttribute="trailing" secondItem="dRI-bS-WI2" secondAttribute="trailing" id="xnm-nu-tVz"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="label" destination="LLb-y3-eun" id="P0e-jG-tFC"/>
+                        <outlet property="scrollView" destination="Kjn-eM-F49" id="pPO-RB-HbB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>

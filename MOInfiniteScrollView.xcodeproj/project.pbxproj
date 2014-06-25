@@ -22,6 +22,7 @@
 		C00FCE77195AB04300993CF8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C00FCE56195AB04200993CF8 /* UIKit.framework */; };
 		C00FCE7F195AB04300993CF8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C00FCE7D195AB04300993CF8 /* InfoPlist.strings */; };
 		C00FCE81195AB04300993CF8 /* MOInfiniteScrollViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C00FCE80195AB04300993CF8 /* MOInfiniteScrollViewTests.m */; };
+		C00FCE8C195AB09700993CF8 /* MOInfiniteScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C00FCE8B195AB09700993CF8 /* MOInfiniteScrollView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,8 @@
 		C00FCE7C195AB04300993CF8 /* MOInfiniteScrollViewTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MOInfiniteScrollViewTests-Info.plist"; sourceTree = "<group>"; };
 		C00FCE7E195AB04300993CF8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C00FCE80195AB04300993CF8 /* MOInfiniteScrollViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MOInfiniteScrollViewTests.m; sourceTree = "<group>"; };
+		C00FCE8A195AB09700993CF8 /* MOInfiniteScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOInfiniteScrollView.h; sourceTree = "<group>"; };
+		C00FCE8B195AB09700993CF8 /* MOInfiniteScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOInfiniteScrollView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +119,8 @@
 			children = (
 				C00FCE61195AB04300993CF8 /* AppDelegate.h */,
 				C00FCE62195AB04300993CF8 /* AppDelegate.m */,
+				C00FCE8A195AB09700993CF8 /* MOInfiniteScrollView.h */,
+				C00FCE8B195AB09700993CF8 /* MOInfiniteScrollView.m */,
 				C00FCE64195AB04300993CF8 /* Main_iPhone.storyboard */,
 				C00FCE67195AB04300993CF8 /* Main_iPad.storyboard */,
 				C00FCE6A195AB04300993CF8 /* ViewController.h */,
@@ -254,6 +259,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C00FCE6C195AB04300993CF8 /* ViewController.m in Sources */,
+				C00FCE8C195AB09700993CF8 /* MOInfiniteScrollView.m in Sources */,
 				C00FCE63195AB04300993CF8 /* AppDelegate.m in Sources */,
 				C00FCE5F195AB04300993CF8 /* main.m in Sources */,
 			);
